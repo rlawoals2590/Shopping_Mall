@@ -1,0 +1,21 @@
+INSERT INTO product VALUES(100001, 'test','testCompany', 15000, '테스트 데이터입니다', 'adult(2).jsp', to_date('2018-09-20', 'yyyy-mm-dd'));
+
+create table product
+(
+id number(10) PRIMARY KEY,
+productName varchar2(10) not null,
+companyId varchar2(20),
+price number(10) not null,
+detail varchar2(200),
+imgPath varchar2(100),
+updateDate date
+);
+
+ALTER TABLE product
+RENAME COLUMN UPDATEDATE TO createDate;
+
+INSERT INTO product VALUES(100002, 'test2','testCompany2', 15000, '테스트 데이터입니다',
+'adult(2).jsp', to_date('2018-09-20', 'yyyy-mm-dd'));
+
+select * from product where id = 10004;
+delete from product where id = 10004;
